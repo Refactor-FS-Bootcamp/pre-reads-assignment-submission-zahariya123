@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function onlyOne(checkbox) {
+      var checkboxes = document.getElementsByName('check')
+      checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false
+      })
+    }
+  </script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+
+  <form action="">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname" value=""><br><br>
+    <label for="Sname">Second name:</label>
+    <input type="text" id="Sname" name="Sname" value=""><br><br>
+    <label for="gender">Gender :</label><br>
+    <input type="radio" id="r1" name="male" /> Male <br>
+    <input type="radio" id="r2" name="female" /> Female <br>
+    <input type="radio" id="r2" name="other" /> Other
+    <br>
+    <br>
+    <input type="checkbox" id="country1" name="check" onclick="onlyOne(this)" value="India">
+    <label for="country1"> India</label><br>
+    <input type="checkbox" id="country2" name="check" onclick="onlyOne(this)" value="China">
+    <label for="country2"> China</label><br>
+    <input type="checkbox" id="country3" name="check" onclick="onlyOne(this)" value="Finland">
+    <label for="country3"> Finland</label><br>
+    <br><br>
+    <label for="address">Address :</label><br>
+    <br>
+   
+    <textarea cols="80" rows="5" value="address"></textarea><br><br>
+
+    <input id="imageUpload" type="file">
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+  </form>
+</body>
+
+</html>
