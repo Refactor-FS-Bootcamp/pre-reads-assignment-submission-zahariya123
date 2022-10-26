@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      // Here the value is stored in new variable x
+      function myFunction() {
+        
+        var x = document.getElementById("note").value;
+        document.getElementById("demo").innerHTML = x;
+        var deleteBtn = document.createElement("button");
+        deleteBtn.innerHTML = "DELETE";
+        
+        document.body.appendChild(deleteBtn);
+        var editBtn = document.createElement("button");
+        editBtn.innerHTML = "EDIT";
+        document.body.appendChild(editBtn);
+
+        deleteBtn.addEventListener("click", () => {
+            document.getElementById("demo").remove()
+            document.getElementById('note').value = ''
+            document.getElementById('title').value = ''
+            location.reload();
+        });
+        editBtn.addEventListener("click", () => {
+          
+            var x = document.getElementById("note").value;
+            document.getElementById("demo").innerHTML = x;
+            
+           
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Your privacy in your hand!</h1>
+    </header>
+    <main>
+      <form action="">
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="title"
+          required
+        /><br /><br />
+        <textarea
+          id="note"
+          name="note"
+          rows="4"
+          placeholder="Enter note here"
+          required
+        ></textarea>
+        <button type="button" onclick="myFunction()">ADD NOTE</button>
+      </form>
+      <h1 style="color: red; font-size: large">Your Note</h1>
+
+      <p id="demo"></p>
+    </main>
+    <footer></footer>
+  </body>
+</html>
